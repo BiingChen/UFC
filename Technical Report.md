@@ -1,5 +1,3 @@
-
-
 # UFC Capstone Technical Report
 
 ## Executive Summary
@@ -23,24 +21,29 @@ Since I am just trying to predict the winner of the fight, I am using accuracy a
 I trained 2 types of model: Logistic Regression and Random Forest.  Logistic Regression was able to achieve a 0.58 accuracy and Random Forest 0.60 accuracy prediction.
 
 **For the logistic regression, the most important metrics were:**
-f1_reach_adv:	0.044867
-f1_grappling_submissions_attempts_avg_diff:	0.044572
-f1_knock_down_landed_avg_diff:	0.041376
-f2_total_strikes_landed_avg_diff:	-0.022935
-f2_head_total_strikes_landed_avg_diff:	-0.023089
-f1_f2_clinch_head_strikes_landed_avg:	-0.038542
+|                   Feature                  | Coefficient |
+|:------------------------------------------:|-------------|
+| f1_reach_adv                               | 0.044867    |
+| f1_grappling_submissions_attempts_avg_diff | 0.044572    |
+| f1_knock_down_landed_avg_diff              | 0.041376    |
+| f2_total_strikes_landed_avg_diff           | -0.022935   |
+| f2_head_total_strikes_landed_avg_diff      | -0.023089   |
+| f1_f2_clinch_head_strikes_landed_avg       | -0.038542   |
+
 
 **For random forest, the top 10 important features were:**
-f2_head_significant_strikes_landed_diff_avg	0.031720
-f2_head_significant_strikes_percent_avg_diff	0.030295
-f1_head_significant_strikes_landed_avg_diff	0.029473
-f1_significant_strikes_landed_diff_avg	0.028200
-f1_f2_clinch_head_strikes_percent_avg	0.024601
-f1_significant_strikes_attempts_diff_avg	0.023133
-f1_head_significant_strikes_landed_diff_avg	0.023019
-f2_significant_strikes_landed_diff_avg	0.022822
-f1_distance_head_strikes_landed_avg_diff	0.021123
-f2_head_significant_strikes_attempts_diff_avg	0.020115
+| Feature                                       | Importance |
+|-----------------------------------------------|------------|
+| f2_head_significant_strikes_landed_diff_avg   | 0.031720   |
+| f2_head_significant_strikes_percent_avg_diff  | 0.030295   |
+| f1_head_significant_strikes_landed_avg_diff   | 0.029473   |
+| f1_significant_strikes_landed_diff_avg        | 0.028200   |
+| f1_f2_clinch_head_strikes_percent_avg         | 0.024601   |
+| f1_significant_strikes_attempts_diff_avg      | 0.023133   |
+| f1_head_significant_strikes_landed_diff_avg   | 0.023019   |
+| f2_significant_strikes_landed_diff_avg        | 0.022822   |
+| f1_distance_head_strikes_landed_avg_diff      | 0.021123   |
+| f2_head_significant_strikes_attempts_diff_avg | 0.020115   |
 
 ### What risks/limitations/assumptions affect these findings?
 - The biggest risk/limitation for my findings were that I was only able to get a limited number of fights that had enough data to model.
@@ -153,7 +156,6 @@ The collected data was quite messy with many missing values and differing format
 	- In order to overcome this, we calculate the historical average for each of these metrics in the fights leading up to the fight being predicted.
 
 
-
 ### Explaining the differences between f1 and f2
 - At this point we have historical averages for each fight metric as well as percentage landed and difference for f1 and f2.  Intuitively, f1 represents fighter 1 and f2 represents fighter 2.  However, once we have calculated the historical averages, the f2 stats no longer represent the stats for a single fighter.  They are the average of the each of the opponents for f1's past fights.  This tells us less about the opponents, and more about f1's defensive capabilities (or actually its inverse).  For example, if the f2 strikes landed percentage is high, it can mean that all the opponents have good striking accuracy.  But more likely it means that f1 has poor dodging ability. 
 
@@ -167,7 +169,6 @@ The collected data was quite messy with many missing values and differing format
 
 Since I also calculated differences in metrics (_diff), those did not have a remaining f1 or f2 tag, so will show up with only an f1 or f2.
 
-At this point, we have the absolute metrics for each fighter and their historical averages for both offense and defense.  As before, what is important is also the relative difference, so once again for each metric I calculated the difference in ratio.
 
 
 
