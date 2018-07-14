@@ -21,6 +21,7 @@ Since I am just trying to predict the winner of the fight, I am using accuracy a
 I trained 2 types of model: Logistic Regression and Random Forest.  Logistic Regression was able to achieve a 0.58 accuracy and Random Forest 0.60 accuracy prediction.
 
 **For the logistic regression, the most important metrics were:**
+
 |                   Feature                  | Coefficient |
 |:------------------------------------------:|-------------|
 | f1_reach_adv                               | 0.044867    |
@@ -32,6 +33,7 @@ I trained 2 types of model: Logistic Regression and Random Forest.  Logistic Reg
 
 
 **For random forest, the top 10 important features were:**
+
 | Feature                                       | Importance |
 |-----------------------------------------------|------------|
 | f2_head_significant_strikes_landed_diff_avg   | 0.031720   |
@@ -169,6 +171,10 @@ The collected data was quite messy with many missing values and differing format
 
 Since I also calculated differences in metrics (_diff), those did not have a remaining f1 or f2 tag, so will show up with only an f1 or f2.
 
+
+## Conclusion
+
+Using historical collected from the UFC website and fightMetrics API, I built a logistic regression and random forest model that predict UFC fight outcomes with an accuracy of 0.58-0.60 accuracy.  The models can be further improved by getting access to the full dataset from fightMetrics as well as doing improved feature engineering, and training more complex models.
 
 
 

@@ -5,8 +5,8 @@
 The goal of my project was to build a model that can predict the winner of a UFC fight based on current and past metrics for each fighter.
 
 ### Data sources:
- 1. V1 JSON API
- 2. V2 JSON API
+ 1. FightMetrics V1 API
+ 2. FightMetrics V2 API
  3. UFC Fighter Page
 
 
@@ -14,6 +14,7 @@ The goal of my project was to build a model that can predict the winner of a UFC
 I trained 2 types of model: Logistic Regression and Random Forest.  Logistic Regression was able to achieve a 0.58 accuracy and Random Forest 0.60 accuracy prediction.
 
 **For the logistic regression, the most important metrics were:**
+
 |                   Feature                  | Coefficient |
 |:------------------------------------------:|-------------|
 | f1_reach_adv                               | 0.044867    |
@@ -25,6 +26,7 @@ I trained 2 types of model: Logistic Regression and Random Forest.  Logistic Reg
 
 
 **For random forest, the top 10 important features were:**
+
 | Feature                                       | Importance |
 |-----------------------------------------------|------------|
 | f2_head_significant_strikes_landed_diff_avg   | 0.031720   |
